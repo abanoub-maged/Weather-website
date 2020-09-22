@@ -62,20 +62,7 @@ app.get("/weather", (req, res) => {
   }
 });
 
-//a++++++++++
-
-// app.get("/products", (req, res) => {
-//   if (!req.query.search) {
-//     return res.send({
-//       error: "you must provide a search term",
-//     });
-//   } else {
-//     console.log(req.query.search);
-//     res.send({
-//       products: [],
-//     });
-//   }
-// });
+const a = 1;
 
 app.get("/help/*", (req, res) => {
   res.render("404", {
