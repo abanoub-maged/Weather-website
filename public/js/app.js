@@ -15,7 +15,7 @@ weatherForm.addEventListener("submit", (e) => {
 
   fetch("/weather?address=" + location + "").then((response) => {
     response.json().then((data) => {
-      if (error) {
+      if (data.error) {
         messageOne.textContent = data.error;
         console.log("error hena!!");
       } else {
