@@ -13,17 +13,15 @@ weatherForm.addEventListener("submit", (e) => {
   messageOne.textContent = "Loading...";
   messageTwo.textContent = "";
 
-  fetch("http://localhost:3000/weather?address=" + location + "").then(
-    (response) => {
-      response.json().then((data) => {
-        if (error) {
-          messageOne.textContent = data.error;
-          console.log("error hena!!");
-        } else {
-          messageOne.textContent =
-            "Temprature in " + search.value + " is " + data.forecast + "°";
-        }
-      });
-    }
-  );
+  fetch("/weather?address=" + location + "").then((response) => {
+    response.json().then((data) => {
+      if (error) {
+        messageOne.textContent = data.error;
+        console.log("error hena!!");
+      } else {
+        messageOne.textContent =
+          "Temprature in " + search.value + " is " + data.forecast + "°";
+      }
+    });
+  });
 });
